@@ -1,19 +1,19 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fce4ec;
+    font-family: 'Playfair Display', serif; /* Font utama untuk seluruh body */
+    background-color: #fce4ec; /* Warna latar belakang merah muda muda */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    overflow-x: hidden;
-    padding: 20px;
-    box-sizing: border-box;
+    overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
+    padding: 20px; /* Padding untuk konten agar tidak terlalu mepet ke tepi */
+    box-sizing: border-box; /* Memastikan padding tidak menambah lebar elemen */
 }
 
 .container {
     width: 100%;
-    max-width: 400px;
+    max-width: 400px; /* Lebar maksimum untuk kontainer utama */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,114 +34,120 @@ body {
 
 
 .card {
-    background-color: #ffe0ee;
+    background-color: #ffe0ee; /* Warna latar belakang kartu, sedikit lebih gelap dari body */
     border-radius: 20px;
     padding: 30px 25px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
     text-align: center;
     margin-bottom: 30px;
-    position: relative;
+    position: relative; /* Diperlukan untuk pseudo-element atau animasi */
     width: 100%;
     box-sizing: border-box;
 }
 
 .card h1 {
-    font-family: 'Georgia', serif;
+    font-family: 'Playfair Display', serif; /* Font untuk judul */
     font-size: 2em;
-    color: #ff69b4;
+    color: #ff69b4; /* Warna pink cerah untuk judul */
     margin-bottom: 20px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Bayangan teks samar */
 }
 
 .card p {
+    font-family: 'Playfair Display', serif; /* Font untuk paragraf */
     font-size: 1.1em;
     color: #555;
     line-height: 1.6;
     margin-bottom: 10px;
-    text-align: left;
+    text-align: justify; /* Teks rata kanan-kiri */
 }
 
 /* Gaya untuk bagian interaktivitas (how was ur day) */
 .mood-section {
     text-align: center;
     width: 100%;
-    margin-top: 20px; /* Ini mungkin tidak terlalu dibutuhkan di welcome-container karena sudah center */
+    margin-top: 20px;
 }
 
 .question-box {
-    background-color: #ffb6c1;
+    background-color: #ffb6c1; /* Warna pink sedikit lebih gelap dari card */
     border-radius: 15px;
     padding: 15px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 25px;
-    display: inline-block;
+    display: inline-block; /* Agar lebarnya sesuai konten */
 }
 
 .question-box p {
+    font-family: 'Playfair Display', serif; /* Font untuk teks pertanyaan */
     font-size: 1.4em;
-    color: #fff;
-    margin: 0;
+    color: #fff; /* Teks putih untuk kontras */
+    margin: 0; /* Hapus margin default paragraf */
     font-weight: bold;
 }
 
 .answer-options {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    display: grid; /* Menggunakan Grid untuk tata letak 2x2 */
+    grid-template-columns: 1fr 1fr; /* Dua kolom dengan lebar yang sama */
+    gap: 15px; /* Jarak antar kotak jawaban */
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 300px; /* Batasi lebar opsi jawaban */
+    margin: 0 auto; /* Tengah secara horizontal */
 }
 
 .answer-box {
-    background-color: #fff;
-    border: 2px solid #ff69b4;
+    background-color: #fff; /* Warna putih untuk kotak jawaban */
+    border: 2px solid #ff69b4; /* Border pink */
     border-radius: 12px;
     padding: 15px 10px;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; /* Transisi untuk hover dan active */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
 .answer-box:hover {
-    background-color: #ffeef2;
-    transform: translateY(-3px);
+    background-color: #ffeef2; /* Sedikit perubahan warna saat hover */
+    transform: translateY(-3px); /* Efek angkat */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
 .answer-box:active {
-    transform: translateY(0);
+    transform: translateY(0); /* Kembali saat diklik */
 }
 
 .answer-box p {
+    font-family: 'Playfair Display', serif; /* Font untuk teks jawaban */
     font-size: 1.1em;
-    color: #ff69b4;
+    color: #ff69b4; /* Warna teks pink */
     margin: 0;
     font-weight: bold;
-    text-align: center;
+    text-align: center; /* Pastikan teks di tengah */
 }
 
+/* Gaya untuk jawaban yang dipilih */
 .answer-box.selected {
-    background-color: #ff69b4;
-    color: #fff;
-    border-color: #ff69b4;
-    transform: scale(1.05);
+    background-color: #ff69b4; /* Latar belakang pink saat dipilih */
+    color: #fff; /* Teks putih saat dipilih */
+    border-color: #ff69b4; /* Border warna yang sama */
+    transform: scale(1.05); /* Sedikit membesar saat dipilih */
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }
 
 .answer-box.selected p {
-    color: #fff;
+    color: #fff; /* Teks putih untuk paragraf di dalam kotak yang dipilih */
 }
 
 
 .selection-message {
+    font-family: 'Playfair Display', serif; /* Font untuk pesan pilihan */
     margin-top: 25px;
     font-size: 1.2em;
     color: #888;
-    min-height: 1.5em;
+    min-height: 1.5em; /* Memberi ruang agar tidak ada lompatan saat teks muncul */
 }
 
 .continue-button {
+    font-family: 'Playfair Display', serif; /* Font untuk tombol next */
     background-color: #ff69b4;
     color: white;
     border: none;
@@ -151,6 +157,10 @@ body {
     font-weight: bold;
     cursor: pointer;
     margin-top: 30px;
+    /* Properti untuk menengahkan tombol */
+    display: inline-block; /* Pastikan dia berperilaku seperti inline-block untuk text-align: center dari induk */
+    /* margin-left: auto; */ /* Tidak diperlukan jika induk sudah text-align: center */
+    /* margin-right: auto; */ /* Tidak diperlukan jika induk sudah text-align: center */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -164,7 +174,34 @@ body {
     transform: translateY(0);
 }
 
+/* Gaya untuk daftar lagu */
+.song-list {
+    list-style: none; /* Menghilangkan bullet point default */
+    padding: 0;
+    margin: 20px 0;
+    text-align: justify; /* Rata kanan-kiri untuk daftar */
+}
+
+.song-list li {
+    margin-bottom: 8px;
+}
+
+.song-list li a {
+    font-family: 'Playfair Display', serif; /* Font untuk link lagu */
+    color: #ff69b4; /* Warna pink untuk link */
+    text-decoration: none; /* Menghilangkan garis bawah link */
+    font-size: 1em;
+    transition: color 0.2s ease;
+}
+
+.song-list li a:hover {
+    color: #e55a9e; /* Warna sedikit gelap saat hover */
+    text-decoration: underline; /* Munculkan garis bawah saat hover */
+}
+
+
 .footer-message {
+    font-family: 'Playfair Display', serif; /* Font untuk pesan footer */
     font-size: 0.9em;
     color: #a0a0a0;
     margin-top: 20px;
@@ -202,5 +239,9 @@ body {
     .continue-button {
         padding: 10px 20px;
         font-size: 1em;
+    }
+
+    .song-list li a {
+        font-size: 0.95em;
     }
 }

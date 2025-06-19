@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Event listener untuk tombol "Lanjut ke Ucapan"
+    // Event listener untuk tombol "Next"
     continueButton.addEventListener('click', () => {
         if (isAnswerSelected) {
             // Arahkan ke halaman greeting.html
