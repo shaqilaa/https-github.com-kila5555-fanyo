@@ -1,0 +1,206 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fce4ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Gaya khusus untuk halaman how was ur day */
+.welcome-container {
+    justify-content: center; /* Pastikan konten di tengah vertikal */
+    min-height: 100vh; /* Agar mengisi seluruh tinggi viewport */
+}
+
+/* Gaya khusus untuk halaman ucapan */
+.greeting-container {
+    padding-top: 30px; /* Memberi sedikit padding di atas agar tidak terlalu mepet */
+    padding-bottom: 30px;
+    /* Jika kontennya panjang dan perlu di-scroll, Anda bisa atur di sini */
+}
+
+
+.card {
+    background-color: #ffe0ee;
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2em;
+    color: #ff69b4;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.card p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Gaya untuk bagian interaktivitas (how was ur day) */
+.mood-section {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px; /* Ini mungkin tidak terlalu dibutuhkan di welcome-container karena sudah center */
+}
+
+.question-box {
+    background-color: #ffb6c1;
+    border-radius: 15px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+.question-box p {
+    font-size: 1.4em;
+    color: #fff;
+    margin: 0;
+    font-weight: bold;
+}
+
+.answer-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.answer-box {
+    background-color: #fff;
+    border: 2px solid #ff69b4;
+    border-radius: 12px;
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.answer-box:hover {
+    background-color: #ffeef2;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.answer-box:active {
+    transform: translateY(0);
+}
+
+.answer-box p {
+    font-size: 1.1em;
+    color: #ff69b4;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.answer-box.selected {
+    background-color: #ff69b4;
+    color: #fff;
+    border-color: #ff69b4;
+    transform: scale(1.05);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.answer-box.selected p {
+    color: #fff;
+}
+
+
+.selection-message {
+    margin-top: 25px;
+    font-size: 1.2em;
+    color: #888;
+    min-height: 1.5em;
+}
+
+.continue-button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.continue-button:hover {
+    background-color: #e55a9e;
+    transform: translateY(-2px);
+}
+
+.continue-button:active {
+    transform: translateY(0);
+}
+
+.footer-message {
+    font-size: 0.9em;
+    color: #a0a0a0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 500px) {
+    .card {
+        padding: 20px 15px;
+    }
+
+    .card h1 {
+        font-size: 1.8em;
+    }
+
+    .card p {
+        font-size: 1em;
+    }
+
+    .question-box p {
+        font-size: 1.2em;
+    }
+
+    .answer-options {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .answer-box p {
+        font-size: 1em;
+    }
+
+    .continue-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
